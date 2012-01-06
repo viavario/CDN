@@ -1,7 +1,7 @@
 # CDN
 
-This class rewrites URL's for use with a CDN (Content Delivery Network).
-It takes the base-tag (<base href="http://www.mydomain.com/directory/"/> into account and only rewrites relative URL's.
+This class rewrites URL's for use with a CDN (Content Delivery Network).  
+It takes the base-tag (\<base href="http://www.mydomain.com/directory/" />) into account and only rewrites relative URL's.  
 Absolute URL's (e.g. http://www.mydomain.com/image.jpg) won't be rewritten.
 
 
@@ -21,22 +21,25 @@ Absolute URL's (e.g. http://www.mydomain.com/image.jpg) won't be rewritten.
 ### Filetypes and rewrites
 
 There are two ways to rewrite URL's:
--	Define a subdomain for each filetype, e.g. media.mydomain.com for images and video, js.mydomain.com for JavaScript, ...
--	Use a random subdomain for each file, e.g. static1.mydomain.com, static2.mydomain.com, static3.mydomain.com, ...  
+
+*	Define a subdomain for each filetype, e.g. media.mydomain.com for images and video, js.mydomain.com for JavaScript, ...
+*	Use a random subdomain for each file, e.g. static1.mydomain.com, static2.mydomain.com, static3.mydomain.com, ...  
 	In this case you'll need to add those subdomains in your control panel or use a wildcard subdomain.
 	The default number of static domains is 4. You can change that number by using the method __setMaxNumberOfStaticDomains__
 
 The URL's of the following filetypes are rewritten to where mydomain.com is your domain name:
--	jpg -> media.mydomain.com
--	gif -> media.mydomain.com
--	png -> media.mydomain.com
--	ico -> media.mydomain.com
--	flv -> media.mydomain.com
--	swf -> media.mydomain.com
--	css -> css.mydomain.com
--	js  -> js.mydomain.com
+
+*	jpg -> media.mydomain.com
+*	gif -> media.mydomain.com
+*	png -> media.mydomain.com
+*	ico -> media.mydomain.com
+*	flv -> media.mydomain.com
+*	swf -> media.mydomain.com
+*	css -> css.mydomain.com
+*	js  -> js.mydomain.com
 
 Example of how to set, add and remove filetypes to be rewritten:
+
 	$cdn->addFileType('mp4', 'media'); // rewrite the URL's of mp4 files to media.mydomain.com
 	$cdn->removeFileType('swf'); // don't rewrite the URL's of swf files to media.mydomain.com anymore
 	$cdn->removeFileType(array('swf', 'flv'); // don't rewrite the URL's of swf and flv files to media.mydomain.com anymore
@@ -50,5 +53,5 @@ Example of how to set, add and remove filetypes to be rewritten:
 	));
 
 ## CONTACT
-http://www.tse-webdesign.be/
+http://www.tse-webdesign.be/  
 info@tse-webdesign.be (bugs, questions or comments)
